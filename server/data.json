@@ -1,0 +1,37 @@
+[    
+    {
+      "proj_id": 1,
+      "team_size": 5,
+      "budget": "10000",
+      "workload": "medium",
+      "completion_time": 1,
+      "tasks": [
+        {
+            "description": "description",
+            "status": "incomplete",
+            "person_assigned": "Michael",
+            "due_date": "January",
+            "estimated_duration": 4
+        }
+      ]
+    },
+
+    {
+        "proj_id": 2,
+        "team_size": 7,
+        "budget": "10500",
+        "workload": "low",
+        "completion_time": 4,
+        "tasks": [
+          {
+              "description": "description",
+              "status": "complete",
+              "person_assigned": "Nicky",
+              "due_date": "February",
+              "estimated_duration": 6
+          }
+        ]
+      }
+    
+
+]
