@@ -22,12 +22,16 @@ def generate_task_description():
     nouns = ['user interface', 'backend logic', 'database schema', 'algorithm', 'integration module']
     return random.choice(adjectives) + ' ' + random.choice(nouns)
 
+def generate_project_name():
+    return (fake.word().capitalize() + "" + fake.word().capitalize())
+
 def generate_data():
     data = []
     
     for proj_id in range(1, 1001):  # Iterate over 1000 projects
         project = {
             "proj_id": proj_id,
+            "proj_name": generate_project_name(),
             "team_size": random.randint(1, 10),
             "budget": round(random.uniform(10000, 15000), 2),
             "workload": random.choice(["low", "medium", "high"]),
