@@ -1,0 +1,22 @@
+/* AboutUs.module.css */
+
+.aboutUsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .aboutUsTitle {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .aboutUsText {
+    font-size: 16px;
+    color: #666;
+    text-align: justify;
+  }
+  
