@@ -1,5 +1,5 @@
-export function AboutPage(){
+export function ManagerPage(){
     return(
-       <h1> About Page </h1>
+       <h1> Manager Page </h1>
     )
 }

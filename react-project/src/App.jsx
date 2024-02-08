@@ -4,7 +4,7 @@ import './App.css'
 
 import { LoginPage } from './componentPage/LoginPage'
 import { HomePage } from './componentPage/HomePage'
-import { AboutPage } from './componentPage/AboutPage'
+import { AboutPage } from './componentPage/ManagerPage'
 import { NavBar } from './components/NavBar'
 
 
@@ -17,7 +17,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" exact Component={HomePage}/>
-          <Route path="/about" Component={AboutPage}/>
+          <Route path="/manager" Component={ManagerPage}/>
           <Route path="/login" Component={LoginPage}/>
         </Routes>
       </div>
