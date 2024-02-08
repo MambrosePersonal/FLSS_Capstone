@@ -1,14 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 
 import { LoginPage } from './componentPage/LoginPage'
 import { HomePage } from './componentPage/HomePage'
-import { AboutPage } from './componentPage/ManagerPage'
+import { ManagerPage } from './componentPage/ManagerPage'
 import { NavBar } from './components/NavBar'
 
+import { getProjects } from './functions/getProjects.js';
 
 function App() {
+
+  let [projects, setProjectList] = useState([]);
+
+  useEffect(() => {
+    getProjects()
+      .then(projects => setProjectList(projects));
+  }, []);
+
+  console.log(projects)
 
   return (
     <>
@@ -17,8 +27,9 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" exact Component={HomePage}/>
-          <Route path="/manager" Component={ManagerPage}/>
+          <Route path="/manager" element={<ManagerPage  projects={projects}/>}/>
           <Route path="/login" Component={LoginPage}/>
+          {/* <Route path="/planets" element={<PlanetList planetsList={planetsList} />}/> */}
         </Routes>
       </div>
     </Router>
