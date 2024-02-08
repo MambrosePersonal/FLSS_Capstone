@@ -1,9 +1,9 @@
 // AboutUs.js
 
 import React from 'react';
-import styles from './AboutUs.module.css';
+import './AboutPage.css';
 
-const AboutUs = () => {
+export function AboutPage()  {
   return (
     <div className={styles.aboutUsContainer}>
       <h2 className={styles.aboutUsTitle}>About Frozen Lakes Incorporated</h2>
@@ -14,4 +14,3 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
