@@ -28,7 +28,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage_M  projects={projects}/>}/>
           <Route path="/login" Component={LoginPage}/>
           <Route path="/about" Component={AboutPage}/>
-          <Route path="/tasks" element={<TaskPage_M/>} />
+          <Route path="/tasks/:id" element={<TaskPage_M projects={projects}/>} />
         </Routes>
       </div>
     </Router>
