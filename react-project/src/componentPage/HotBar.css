@@ -1,0 +1,22 @@
+.task-card-hotbar {
+    display: flex;
+    padding: 20px;
+    margin-bottom: 10px; /* Spacing between the hotbar and the first task card */
+    background-color: #e9ecef; /* Light shade for differentiation */
+    border-radius: 8px;
+    color: #495057; /* Darker text for contrast */
+  }
+  
+  .hotbar-detail {
+    flex: 1; /* Allows each detail to take up equal space */
+    text-align: center; /* Centers text within each flex item */
+    font-weight: bold; /* Makes header text bold */
+  }
+  
+  
+  .task-card-hotbar h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  

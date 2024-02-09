@@ -8,14 +8,19 @@ export function ProjectsCard_M({ project }) {
  
     return (
         <>
-              <div className="task-card">
+                 <div className="task-card-hotbar">
+      <div className="hotbar-detail">Task:</div>
+      <div className="hotbar-detail">Estimated Duration:</div>
+      <div className="hotbar-detail">Status:</div>
+      <div className="hotbar-detail">Due:</div>
+    </div>
       <h2>
         <span className="task-detail">Project Name: {project?.proj_name}</span>
         <span className="task-detail">Team Size: {project?.team_size} </span>
         <span className="task-detail">Estimated Completion Time: {project?.completion_time}</span>
         <Link to={`/tasks/${project?.proj_id}`}>View Tasks</Link>
       </h2>
-    </div>
+  
 
         </>
     )
