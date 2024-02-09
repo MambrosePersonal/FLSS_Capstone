@@ -22,12 +22,14 @@ export function TaskPage_M ({projects}){
         }, []);
         console.log(project)
 
-    return(
-        <>
-       <h1>hello</h1>
-        <div>{JSON.stringify(project)}</div>
- </>
-    )
+        let taskList = project.tasks
+        return (
+            <>
+                <div>
+                    <div>{taskList?.map(task => <TaskCard task={task} key={task.id} />)}</div>
+                </div>
+            </>
+        )
 }
 
 
