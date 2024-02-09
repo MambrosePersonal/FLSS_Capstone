@@ -28,10 +28,12 @@ export function TaskPage_M({ projects }) {
         <>
         <div className="task-card-hotbar">
                 <h2>
+
                     <span className="hotbar-detail">Task:</span>
                     <span className="hotbar-detail">Estimated Duration:</span>
                     <span className="hotbar-detail">Status:</span>
                     <span className="hotbar-detail">Due:</span>
+                    <button class="edit-button">Edit</button>
                 </h2>
             </div>
             <div></div>

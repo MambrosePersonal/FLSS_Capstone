@@ -11,12 +11,35 @@
     flex: 1; /* Allows each detail to take up equal space */
     text-align: center; /* Centers text within each flex item */
     font-weight: bold; /* Makes header text bold */
+    margin: 0 50px; /* Adds horizontal spacing between details. Adjust as needed */
   }
-  
   
   .task-card-hotbar h2 {
     margin: 0;
     font-size: 18px;
   }
   
+  .edit-button {
+    padding: 10px 20px; /* Adequate padding for clickability */
+    background-color: #007bff; /* A pleasant blue shade */
+    color: white; /* White text for contrast */
+    border: none; /* No border for a modern look */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px; /* Legible font size */
+    cursor: pointer; /* Cursor indicates clickability */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    text-align: center; /* Ensures text is centered */
+    display: inline-block; /* Allows setting dimensions */
+    text-decoration: none; /* Removes underline from links if button is an <a> tag */
+    font-weight: bold; /* Bold text for emphasis */
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  
+  .edit-button:focus {
+    outline: none; /* Removes the outline to maintain the design, use with caution for accessibility */
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.5); /* Adds a glow effect for focus, improving accessibility */
+  }
   
