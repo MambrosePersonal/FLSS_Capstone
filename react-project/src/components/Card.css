@@ -1,21 +1,46 @@
-.horizontal-card {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 100%; /* Adjust as needed */
-    padding: 20px;
-  }
-  
-  .card-image {
-    width: 500px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
-    object-fit: cover;
-    margin-right: 20px;
-  }
-  
-  .card-content h2, .card-content p {
-    margin: 0;
-  }
-  
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.task-card h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+}
+
+.task-detail {
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+/* Optionally, you might want to add some color coding for task status */
+.task-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.status-new {
+  background-color: #007bff;
+}
+
+.status-in-progress {
+  background-color: #ffc107;
+}
+
+.status-completed {
+  background-color: #28a745;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../components/NavBar';
 import loginCred from '../componentPage/loginCred.json'
+import './LoginPage.css'
 
 export function LoginPage(){
   const navigate = useNavigate();
@@ -23,7 +24,11 @@ export function LoginPage(){
     e.preventDefault();
     for (let i = 0; i < loginCred.length; i++) {
       if (formData.name === loginCred[i].username && formData.password === loginCred[i].password) {
-        navigate('/projects-employee', { replace: true } )
+        if(loginCred[i].status === "M"){
+          navigate('/projects-manager', { replace: true } )
+        }else if(loginCred[i].status === "E"){
+          navigate('/projects-employee', { replace: true } )
+          }
         break
       } else if(formData.name !== loginCred[loginCred.length-1].username && formData.password !== loginCred[loginCred.length-1].password)
         alert('Form validation failed')

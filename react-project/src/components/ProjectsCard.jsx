@@ -8,11 +8,15 @@ export function ProjectsCard({ project }) {
  
     return (
         <>
-            <div className="horizontal-card">
-                <h2>Manager Name: {project?.assigned_manager} - Project Name: {project?.proj_name} - Team Size: {project?.team_size} - Estimated Completion Time: {project?.completion_time}</h2>
-                <Link to={`/tasks/${project?.proj_id}`}>View Tasks</Link>
-    
-            </div>
+              <div className="task-card">
+      <h2>
+        <span className="task-detail">Manager Name: {project?.assigned_manager} </span>
+        <span className="task-detail">Project Name: {project?.proj_name}</span>
+        <span className="task-detail">Team Size: {project?.team_size} </span>
+        <span className="task-detail">Estimated Completion Time: {project?.completion_time}</span>
+        <Link to={`/tasks/${project?.proj_id}`}>View Tasks</Link>
+      </h2>
+    </div>
 
         </>
     )
