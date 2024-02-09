@@ -20,7 +20,6 @@ function App() {
       .then(projects => setProjectList(projects));
   }, []);
 
-  console.log(projects)
 
   return (
     <>

@@ -1,15 +1,14 @@
-import { ProjectsView } from "../components/ProjectsView"
+import { Projects } from "../components/Projects"
 
-export function ManagerPage( {projects} ){
-    return(<>
-       <h1> Manager Page </h1>
-       <div>
-        <h3>
-            {projects[0]?.assigned_manager}
-        </h3>
-        <div> <ProjectsView project={projects[0]}/> </div>
-        
-       </div>
-       </>
+export function ManagerPage({ projects }) {
+    return (
+        <>
+            <div>
+                <h3>
+                    Welcome {projects[0]?.assigned_manager}
+                </h3>
+                <div><Projects projects={projects} /></div>
+            </div>
+        </>
     )
 }

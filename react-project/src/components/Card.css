@@ -1,0 +1,21 @@
+.horizontal-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%; /* Adjust as needed */
+    padding: 20px;
+  }
+  
+  .card-image {
+    width: 500px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .card-content h2, .card-content p {
+    margin: 0;
+  }
+  

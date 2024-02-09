@@ -3,7 +3,7 @@
 import React from 'react';
 import './AboutPage.css';
 
-export function AboutPage()  {
+export function AboutPage() {
   return (
     <div className="aboutUsContainer">
       <h2 className="aboutUsTitle">About Frozen Lakes Incorporated</h2>
