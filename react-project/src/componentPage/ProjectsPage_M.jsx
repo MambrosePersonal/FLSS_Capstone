@@ -1,5 +1,5 @@
 
-import { ProjectsCard } from "../components/ProjectsCard";
+import { ProjectsCard_M } from "../components/ProjectsCard_M";
 
 
 export function ProjectsPage_M({ projects, name }) {
@@ -16,7 +16,7 @@ export function ProjectsPage_M({ projects, name }) {
                 <h3>
                     Welcome {projectList[0].assigned_manager}
                 </h3>
-                <div>{projectList?.map(project => <ProjectsCard project={project} key={project.proj_id} />)}</div>
+                <div>{projectList?.map(project => <ProjectsCard_M project={project} key={project.proj_id} />)}</div>
             </div>
         </>
     )

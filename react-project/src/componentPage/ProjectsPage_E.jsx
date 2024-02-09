@@ -1,6 +1,6 @@
 
-import { ProjectsCard } from '../components/ProjectsCard';
-import { TaskCard } from '../components/TaskCard';
+
+import { TaskCard_E } from '../components/TaskCard_E';
 
 export function ProjectsPage_E({ projects, name }) {
 
@@ -26,7 +26,7 @@ export function ProjectsPage_E({ projects, name }) {
                 <h3>
                     Welcome {taskList[0].person_assigned}
                 </h3>
-                <div>{taskList?.map(task => <TaskCard task={task} key={task.id} />)}</div>
+                <div>{taskList?.map(task => <TaskCard_E task={task} key={task.id} />)}</div>
             </div>
         </>
     )

@@ -1,4 +1,4 @@
-import { TaskCard_M } from "../components/TaskCard_M"
+import { TaskCard_E } from "../components/TaskCard_E"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -27,7 +27,7 @@ export function TaskPage_M({ projects }) {
     return (
         <>
             <div>
-                <div>{taskList?.map(task => <TaskCard_M task={task} key={task.id} />)}</div>
+                <div>{taskList?.map(task => <TaskCard_E task={task} key={task.id} />)}</div>
             </div>
         </>
     )

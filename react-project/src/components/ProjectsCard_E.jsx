@@ -1,7 +1,7 @@
 import './Card.css'
 import {Link} from 'react-router-dom';
 
-export function ProjectsCard({ project }) {
+export function ProjectsCard_E({ project }) {
     console.log(project)
  
     return (
