@@ -88,7 +88,7 @@ app.post("/api/projects/:id/tasks/add", async (req, res) => {
       const taskId = largestTaskId + 1;
       
       await collection.updateOne({ 'proj_id': +proj_id },
-          { $push: {  tasks: {"id": taskId,"description": description, "status:": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration} } });
+          { $push: {  tasks: {"id": taskId,"description": description, "status": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration} } });
  
       res.status(201).json({ message: 'Task added successfully' });
   } catch (error) {
@@ -128,6 +128,41 @@ app.get("/api/projects/:id/tasks/:tid", async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+app.put("/api/projects/:id/tasks/:tid/edit", async (req, res) => {
+  try {
+      
+      await client.connect();
+      const db = client.db(dbName);
+      const collection = db.collection('projects');
+      const proj_id = req.params.id; // Project ID
+      const task_id = req.params.tid; // Task ID
+
+      // Updated task fields from the request body
+      const { description, status, person_assigned, due_date, estimated_duration } = req.body;
+ 
+      // Find the project and update the specific task
+      //const project = await collection.findOne({'proj_id': +proj_id} );
+      //const task = await collection.findOne({'task_id': +task_id} );
+
+      // Use the $set operator to modify the task within the array
+      const updateResult = await collection.updateOne(
+          { "proj_id": +proj_id,"task_id": +task_id },
+          { $set: {"description": description, "status": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration}
+          }
+      );
+ 
+      if (updateResult.matchedCount === 0) {
+          return res.status(404).json({ error: 'Project or task not found' });
+      }
+ 
+      res.status(200).json({ message: 'Task updated successfully' });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 const port = 3500;
