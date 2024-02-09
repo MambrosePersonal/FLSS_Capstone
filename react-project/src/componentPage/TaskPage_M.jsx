@@ -1,6 +1,6 @@
 import { TaskCard } from "../components/TaskCard"
 
-export function TaskPage ({tasks}){
+export function TaskPage_M ({tasks}){
     console.log(tasks)
     return(
         <>

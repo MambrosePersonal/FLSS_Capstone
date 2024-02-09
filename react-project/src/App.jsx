@@ -4,9 +4,9 @@ import './App.css'
 
 import { LoginPage } from './componentPage/LoginPage'
 import { HomePage } from './componentPage/HomePage'
-import { ProjectsPage } from './componentPage/ProjectsPage.jsx'
+import { ProjectsPage_M } from './componentPage/ProjectsPage_M.jsx'
 import { AboutPage } from './componentPage/AboutPage'
-import { TaskPage } from './componentPage/TaskPage.jsx'
+import { TaskPage_M } from './componentPage/TaskPage_M.jsx'
 import { getProjects } from './functions/getProjects.js';
 
 function App() {
@@ -25,10 +25,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" exact Component={HomePage}/>
-          <Route path="/projects" element={<ProjectsPage  projects={projects}/>}/>
+          <Route path="/projects" element={<ProjectsPage_M  projects={projects}/>}/>
           <Route path="/login" Component={LoginPage}/>
           <Route path="/about" Component={AboutPage}/>
-          <Route path="/tasks" element={<TaskPage/>} />
+          <Route path="/tasks" element={<TaskPage_M/>} />
         </Routes>
       </div>
     </Router>

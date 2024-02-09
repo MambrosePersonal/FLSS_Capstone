@@ -1,6 +1,6 @@
 import './Card.css'
 import { useState } from "react"
-import {TaskPage} from '../componentPage/TaskPage'
+import {TaskPage_M} from '../componentPage/TaskPage_M'
 import { useNavigate } from "react-router-dom";
 
 export function ProjectsCard({ project }) {

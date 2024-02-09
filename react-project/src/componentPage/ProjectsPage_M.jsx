@@ -2,7 +2,7 @@
 import { ProjectsCard } from "../components/ProjectsCard";
 
 
-export function ProjectsPage({ projects }) {
+export function ProjectsPage_M({ projects, name }) {
 
     let projectList = []
     for (let manProject of projects) {
