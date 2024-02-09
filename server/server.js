@@ -69,30 +69,34 @@ app.get("/api/projects/:id/tasks", async (req, res) => {
   }
 });
 
-
-
 app.post("/api/projects/:id/tasks/add", async (req, res) => {
   try {
-
       await client.connect();
       const db = client.db(dbName);
       const collection = db.collection('projects');
-
       const proj_id = req.params.id;
-
       const { description, status, person_assigned, due_date, estimated_duration } = req.body;
-     
+ 
+      // Find the project document first
+      const project = await collection.findOne({'proj_id': +proj_id} );
+ 
+      if (!project) {
+          return res.status(404).json({ error: 'Project not found' });
+      }
       
-      //Add findone that looks up project id, get max value id of tasks array and then do plus one for id in the array
-      // Update the project document in the database
-      await collection.updateOne({ 'proj_id': +proj_id }, { $push: {  tasks: {"id": 120,"description": description, "status:": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration} } });
-
+      const largestTaskId = project.tasks.length
+      const taskId = largestTaskId + 1;
+      
+      await collection.updateOne({ 'proj_id': +proj_id },
+          { $push: {  tasks: {"id": taskId,"description": description, "status:": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration} } });
+ 
       res.status(201).json({ message: 'Task added successfully' });
   } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 app.get("/api/projects/:id/tasks/:tid", async (req, res) => {
   try {
