@@ -31,10 +31,13 @@ function App() {
           <Route path="/manager" element={<ManagerPage  projects={projects}/>}/>
           <Route path="/login" Component={LoginPage}/>
           <Route path="/about" Component={AboutPage}/>
-          {/* <Route path="/planets" element={<PlanetList planetsList={planetsList} />}/> */}
         </Routes>
       </div>
     </Router>
+
+    <footer>
+        Copyright &copy; {(new Date()).getFullYear()} frozenlakes
+      </footer>
     </>
   )
 }
