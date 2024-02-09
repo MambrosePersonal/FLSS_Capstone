@@ -23,7 +23,7 @@ export function LoginPage(){
     e.preventDefault();
     for (let i = 0; i < loginCred.length; i++) {
       if (formData.name === loginCred[i].username && formData.password === loginCred[i].password) {
-        navigate('/projects', { replace: true } )
+        navigate('/projects-employee', { replace: true } )
         break
       } else if(formData.name !== loginCred[loginCred.length-1].username && formData.password !== loginCred[loginCred.length-1].password)
         alert('Form validation failed')
