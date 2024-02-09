@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { NavBar } from '../components/NavBar';
 
 export function LoginPage(){
+
+  const navigate = useNavigate();
+
   // Define state variables to hold form data
   const [formData, setFormData] = useState({
     name: '',
@@ -17,10 +22,10 @@ export function LoginPage(){
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name = 'nicky' && formData.password == 'password') {
-      console.log("Yay!")
+      navigate('/projects', { replace: true } )
       //Add in the route to manager page
     } else {
-      console.log("Bummer")
+      alert('Form validation failed')
     }
 
     console.log(formData);
@@ -34,6 +39,7 @@ export function LoginPage(){
 
     return(
         <>
+        <NavBar/>
         <h1>Login Page</h1>
         <form onSubmit={handleSubmit}>
       <div>

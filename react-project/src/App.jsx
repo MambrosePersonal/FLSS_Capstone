@@ -4,11 +4,9 @@ import './App.css'
 
 import { LoginPage } from './componentPage/LoginPage'
 import { HomePage } from './componentPage/HomePage'
-import { ManagerPage } from './componentPage/ManagerPage'
+import { ProjectsPage } from './componentPage/ProjectsPage.jsx'
 import { AboutPage } from './componentPage/AboutPage'
-
-import { NavBar } from './components/NavBar'
-
+import { TaskPage } from './componentPage/TaskPage.jsx'
 import { getProjects } from './functions/getProjects.js';
 
 function App() {
@@ -25,12 +23,12 @@ function App() {
     <>
      <Router>
       <div>
-        <NavBar/>
         <Routes>
           <Route path="/" exact Component={HomePage}/>
-          <Route path="/manager" element={<ManagerPage  projects={projects}/>}/>
+          <Route path="/projects" element={<ProjectsPage  projects={projects}/>}/>
           <Route path="/login" Component={LoginPage}/>
           <Route path="/about" Component={AboutPage}/>
+          <Route path="/tasks" element={<TaskPage/>} />
         </Routes>
       </div>
     </Router>
