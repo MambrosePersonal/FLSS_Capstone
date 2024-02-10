@@ -17,13 +17,13 @@
 
 .hero p {
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .feature {
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .feature .feature-item {
@@ -40,7 +40,7 @@
 
 .feature .feature-item h3 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .feature .feature-item p {
