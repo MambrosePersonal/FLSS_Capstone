@@ -1,45 +1,33 @@
-import { TaskCard_M } from "../components/TaskCard_M"
+import { TaskCard } from "../components/TaskCard"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./HotBar.css"
+import axios from 'axios';
 
-export function TaskPage_M({ projects }) {
+export function TaskPage_M ({projects}){
     let params = useParams();
     let projectId = params.id;
 
     let [project, setProject] = useState([]);
 
     useEffect(() => {
-        async function getProject() {
-            const url = `/api/projects/${projectId}`;
-            let newProject = await fetch(url)
-                .then((res) => res.json())
-            return newProject;
+          async function getProject() {
+          const url = `/api/projects/${projectId}`;
+          let newProject = await fetch(url)
+            .then((res) => res.json())
+          return newProject;
         }
 
         getProject()
-            .then(project => setProject(project));
-    }, []);
-    console.log(project)
+        .then(project => setProject(project));
+        }, []);
+        console.log(project)
 
-    let taskList = project.tasks
-
-    return (
-        <>
-        <div className="task-card-hotbar">
-                <h2>
-
-                    <span className="hotbar-detail">Task:</span>
-                    <span className="hotbar-detail">Estimated Duration:</span>
-                    <span className="hotbar-detail">Status:</span>
-                    <span className="hotbar-detail">Due:</span>
-                    <button class="edit-button">Edit</button>
-                </h2>
-            </div>
-            <div></div>
-            <div>
-                <div>{taskList?.map(task => <TaskCard_M task={task} key={task.id} />)}</div>
-            </div>
-        </>
-    )
+        let taskList = project.tasks
+        return (
+            <>
+                <div>
+                    <div>{taskList?.map(task => <TaskCard task={task} key={task.id} />)}</div>
+                </div>
+            </>
+        )
 }
