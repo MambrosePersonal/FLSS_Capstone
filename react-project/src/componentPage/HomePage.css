@@ -32,8 +32,10 @@
 }
 
 .feature .feature-item img {
-    max-width: 100px;
+ 
     margin-bottom: 20px;
+    width: 250px;
+    height: 200px;
 }
 
 .feature .feature-item h3 {

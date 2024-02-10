@@ -1,3 +1,26 @@
+.task-card-hotbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px; /* Add margin-bottom for spacing */
+  padding: 15px; /* Adjust padding as needed */
+}
+
+.hotbar-detail {
+  flex: 1; /* Each column takes equal space */
+  text-align: center; /* Align text in the center */
+}
+
+/* Optionally, you might want to add some color coding for task status */
+.task-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+
 .task-card {
   display: flex;
   align-items: center;
@@ -8,7 +31,6 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  
 }
 
 .task-card:hover {
@@ -23,18 +45,10 @@
 }
 
 .task-detail {
-  flex: 1; /* Allows each detail to take up equal space */
-    text-align: center; /* Centers text within each flex item */
-    margin: 0 100px;
-  white-space: nowrap;
+  flex: 1;
+  text-align: center;
 }
 
-/* Optionally, you might want to add some color coding for task status */
-.task-status {
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
-}
 
 .status-new {
   background-color: #007bff;

@@ -8,7 +8,7 @@ body {
   
   /* NavBar Styling */
   nav {
-    background-color: #007bff;
+    background-color:  #0a3961;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -52,7 +52,7 @@ body {
   button[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #366da8;
     color: white;
     border: none;
     border-radius: 4px;
