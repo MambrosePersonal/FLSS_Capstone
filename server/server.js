@@ -142,19 +142,17 @@ app.put("/api/projects/:id/tasks/:tid/edit", async (req, res) => {
       const { description, status, person_assigned, due_date, estimated_duration } = req.body;
  
       // Find the project and update the specific task
-      //const project = await collection.findOne({'proj_id': +proj_id} );
+      const project = await collection.findOne({'proj_id': +proj_id} );
       //const task = await collection.findOne({'task_id': +task_id} );
 
+
       // Use the $set operator to modify the task within the array
-      const updateResult = await collection.updateOne(
+      await collection.updateOne(
           { "proj_id": +proj_id,"task_id": +task_id },
-          { $set: {"description": description, "status": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration}
+          { $set: {task: {"description": description, "status": status, "person_assigned": person_assigned, "due_date":due_date, "estimated_duration":estimated_duration}}
           }
       );
- 
-      if (updateResult.matchedCount === 0) {
-          return res.status(404).json({ error: 'Project or task not found' });
-      }
+
  
       res.status(200).json({ message: 'Task updated successfully' });
   } catch (error) {
