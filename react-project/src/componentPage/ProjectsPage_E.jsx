@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { ProjectsCard_E } from '../components/ProjectsCard_E';
+import "./HotBar.css"
 
 export function ProjectsPage_E({ projects}) {
 
@@ -17,9 +18,10 @@ export function ProjectsPage_E({ projects}) {
     return (
         <>
             <div>
-                <h3>
+                <h1>
                     Welcome {name}
-                </h3>
+                </h1>
+                <h3 className='underline'>Projects You Are In</h3>
                 <div className="task-card-hotbar">
                 <div className="hotbar-detail">Manager</div>
                     <div className="hotbar-detail">Project Name</div>

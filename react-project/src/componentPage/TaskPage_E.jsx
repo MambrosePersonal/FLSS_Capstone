@@ -27,6 +27,7 @@ export function TaskPage_E({ projects }) {
 
     return (
         <>
+        <h1> {project.proj_name} Tasks</h1>
             <div className="task-card-hotbar">
                 <h2>
 
