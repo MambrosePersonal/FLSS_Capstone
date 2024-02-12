@@ -3,12 +3,42 @@
         "id": 1,
         "username":"nicky",
         "password": "password",
-        "status":"M"
+        "status":"M",
+        "name": "nicky"
     },
     {
         "id": 2,
         "username":"michael",
         "password": "password",
         "status":"E"
+    },
+    {
+        "id": 3,
+        "username":"jparker@fli.com",
+        "password": "password",
+        "status":"M",
+        "name": "Joseph Parker"
+    },
+    {
+        "id": 4,
+        "username":"clopez@fli.com",
+        "password": "password",
+        "status":"E",
+        "name":"Carla Lopez"
+    },
+    {
+        "id": 5,
+        "username":"gshannon@fli.com",
+        "password": "password",
+        "status":"M",
+        "name":"George Shannon"
+    },
+    {
+        "id": 6,
+        "username":"dwhite@fli.com",
+        "password": "password",
+        "status":"E",
+        "name":"Debbie White"
     }
+
 ]

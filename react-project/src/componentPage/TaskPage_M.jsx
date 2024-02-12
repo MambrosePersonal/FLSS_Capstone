@@ -2,6 +2,7 @@ import { TaskCard_M } from "../components/TaskCard_M"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./HotBar.css"
+import { Link } from "react-router-dom";
 
 export function TaskPage_M({ projects }) {
     let params = useParams();
@@ -26,17 +27,17 @@ export function TaskPage_M({ projects }) {
 
     return (
         <>
-        <div className="task-card-hotbar">
+            <div className="task-card-hotbar">
                 <h2>
 
-                    <span className="hotbar-detail">Task:</span>
-                    <span className="hotbar-detail">Estimated Duration:</span>
-                    <span className="hotbar-detail">Status:</span>
-                    <span className="hotbar-detail">Due:</span>
-                    <button class="edit-button">Edit</button>
+                    <span className="hotbar-detail">Assigned To</span>
+                    <span className="hotbar-detail">Description</span>
+                    <span className="hotbar-detail">Duration</span>
+                    <span className="hotbar-detail">Status</span>
+                    <span className="hotbar-detail">Due Date</span>
+                    <Link to={`/add`}>Add</Link>
                 </h2>
             </div>
-            <div></div>
             <div>
                 <div>{taskList?.map(task => <TaskCard_M task={task} key={task.id} />)}</div>
             </div>

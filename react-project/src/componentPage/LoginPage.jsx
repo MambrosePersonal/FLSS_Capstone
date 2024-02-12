@@ -20,14 +20,17 @@ export function LoginPage(){
   };
 
   // Event handler to handle form submission
+
   const handleSubmit = (e) => {
     e.preventDefault();
     for (let i = 0; i < loginCred.length; i++) {
       if (formData.name === loginCred[i].username && formData.password === loginCred[i].password) {
         if(loginCred[i].status === "M"){
-          navigate('/projects-manager', { replace: true } )
+          const someData = { name: loginCred[i].name };
+          navigate('/projects-manager', { state: { name: loginCred[i].name } } )
         }else if(loginCred[i].status === "E"){
-          navigate('/projects-employee', { replace: true } )
+          const someData = { name: loginCred[i].name };
+          navigate('/projects-employee',{ state: { name: loginCred[i].name }} )
           }
         break
       } else if(formData.name !== loginCred[loginCred.length-1].username && formData.password !== loginCred[loginCred.length-1].password)

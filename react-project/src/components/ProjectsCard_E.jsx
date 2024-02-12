@@ -6,12 +6,13 @@ export function ProjectsCard_E({ project }) {
  
     return (
         <>
-            <div className="horizontal-card">
-                <h2>Employee Name: {project?.task.person_assigned} - Project Name: {project?.proj_name} - Team Size: {project?.team_size} - Estimated Completion Time: {project?.completion_time}</h2>
-                <Link to={`/tasks/${project?.proj_id}`}>View Tasks</Link>
-    
+        <div className="task-card">
+        <span className="task-detail"> {project?.assigned_manager}</span>
+                <span className="task-detail"> {project?.proj_name}</span>
+                <span className="task-detail"> {project?.team_size} </span>
+                <span className="task-detail">{project?.completion_time}</span>
+                <Link to={`/tasks_E/${project?.proj_id}`}>View Tasks</Link>
             </div>
-
         </>
     )
 }
