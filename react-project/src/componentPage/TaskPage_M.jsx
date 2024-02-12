@@ -2,11 +2,12 @@ import { TaskCard_M } from "../components/TaskCard_M"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./HotBar.css"
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function TaskPage_M({ projects }) {
     let params = useParams();
     let projectId = params.id;
+    const navigate = useNavigate();
 
     let [project, setProject] = useState([]);
 
@@ -24,8 +25,16 @@ export function TaskPage_M({ projects }) {
     console.log(project)
 
     let taskList = project.tasks
+    const id = { projectid: project?.proj_id };
+console.log(id)
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/add', { state: { project_id : project.proj_id} } )
+}
 
     return (
+
         <>
           <h1> {project.proj_name} Tasks</h1>
             <div className="task-card-hotbar">
@@ -36,7 +45,7 @@ export function TaskPage_M({ projects }) {
                     <span className="hotbar-detail">Duration</span>
                     <span className="hotbar-detail">Status</span>
                     <span className="hotbar-detail">Due Date</span>
-                    <Link to={`/add`} className="buttonStyle">Add</Link>
+                   <button onClick={handleSubmit}>Add</button>
                 </h2>
             </div>
             <div>

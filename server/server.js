@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { MongoClient, ObjectId } from 'mongodb';
 
 
@@ -6,9 +7,13 @@ var url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
 const dbName = "proj-mgmt";
 
+
+
 const app = express();
 
+
 app.use(express.json());
+app.use(cors());
 
 app.all("*", (req, res, next) => {
   console.log(req.url);

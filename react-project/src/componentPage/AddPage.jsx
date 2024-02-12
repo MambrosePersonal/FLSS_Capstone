@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export function AddPage({ projectId }) {
+export function AddPage() {
+
+    const location = useLocation();
+    const { projectid} = location.state || {};
     const [formData, setFormData] = useState({
         description: '',
         status: '',
@@ -16,11 +20,13 @@ export function AddPage({ projectId }) {
             [name]: value
         }));
     };
-
+    
+    console.log(projectid)
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3500/api/projects/:id/tasks/add', {
+            const url = `http://localhost:3500/api/projects/${projectid}/tasks/add`
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
