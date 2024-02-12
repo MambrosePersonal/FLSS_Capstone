@@ -11,6 +11,7 @@ import { TaskPage_M } from './componentPage/TaskPage_M.jsx'
 import {TaskPage_E} from "./componentPage/TaskPage_E.jsx"
 import { getProjects } from './functions/getProjects.js';
 import { AddPage } from './componentPage/AddPage.jsx'
+import { AddedPage } from './componentPage/AddedPage.jsx'
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
           <Route path="/about" Component={AboutPage}/>
           <Route path="/tasks_M/:id" element={<TaskPage_M projects={projects}/>} />
           <Route path="/tasks_E/:id" element={<TaskPage_E projects={projects}/>} />
-          <Route path="/add" Component={AddPage}/>
+          <Route path="/add" element={<AddPage/>}/>
+          <Route path="/tasks_M" element={<AddedPage/>}/>
         </Routes>
       </div>
     </Router>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./HotBar.css"
 import { useNavigate } from "react-router-dom";
+import { AddPage } from "./AddPage";
 
 export function TaskPage_M({ projects }) {
     let params = useParams();
@@ -26,17 +27,14 @@ export function TaskPage_M({ projects }) {
 
     let taskList = project.tasks
     const id = { projectid: project?.proj_id };
-console.log(id)
+    console.log(id)
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate('/add', { state: { project_id : project.proj_id} } )
-}
+
 
     return (
 
         <>
-          <h1> {project.proj_name} Tasks</h1>
+            <h1> {project.proj_name} Tasks</h1>
             <div className="task-card-hotbar">
                 <h2>
 
@@ -45,7 +43,9 @@ const handleSubmit = (e) => {
                     <span className="hotbar-detail">Duration</span>
                     <span className="hotbar-detail">Status</span>
                     <span className="hotbar-detail">Due Date</span>
-                   <button onClick={handleSubmit}>Add</button>
+                    <button onClick={() => navigate('/add', { state: { tasks: taskList } })}>Add Task</button>
+
+                    {/* <button onClick={<AddPage tasks = {taskList}/>}>Add</button> */}
                 </h2>
             </div>
             <div>

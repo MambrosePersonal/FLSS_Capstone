@@ -1,0 +1,62 @@
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9; /* Slightly different shade for contrast */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px; /* Consistent spacing between cards */
+    padding: 15px; /* Adjust padding as needed */
+  }
+  
+  .task-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-card h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: normal;
+  }
+  
+  .task-detail {
+    flex: 1; /* Each column takes equal space, mirroring .hotbar-detail */
+    text-align: center; /* Align text in the center */
+    padding: 0 10px; /* Ensure alignment with hotbar details */
+  }
+  
+  /* Optionally, you might want to add some color coding for task status */
+  .task-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .status-new {
+    background-color: #007bff;
+  }
+  
+  .status-in-progress {
+    background-color: #ffc107;
+  }
+  
+  .status-completed {
+    background-color: #28a745;
+  }
+  .buttonStyle {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttonStyle:hover {
+    background-color: #0056b3;
+  }
+  

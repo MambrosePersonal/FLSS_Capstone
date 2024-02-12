@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { AddedPage } from './AddedPage';
 
 export function AddPage() {
-
     const location = useLocation();
-    const { projectid} = location.state || {};
+    const { tasks } = location.state || {};
+
+    const navigate = useNavigate();
+
+    
+
     const [formData, setFormData] = useState({
         description: '',
         status: '',
@@ -21,7 +27,7 @@ export function AddPage() {
         }));
     };
     
-    console.log(projectid)
+    console.log(tasks)
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -75,7 +81,7 @@ export function AddPage() {
                     Estimated Duration:
                     <input type="number" name="estimated_duration" value={formData.estimated_duration} onChange={handleChange} />
                 </label>
-                <button type="submit">Add Task</button>
+                <button onClick={() => navigate('/tasks_M', { state: { tasks: tasks } })}>Submit</button>
             </form>
         </div>
     );
